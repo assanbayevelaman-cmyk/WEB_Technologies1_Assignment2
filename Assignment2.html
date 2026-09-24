@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <style>
+            .nav-bar {
+                background-color: aqua;
+                padding: 12px;
+                border: 4px solid blue;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 1rem;
+            }
+            .nav-links {
+                display: flex;
+                list-style: none;
+                gap: 50px;
+            }
+            .card-row {
+                display: flex;
+                background-color: cornflowerblue;
+                border: 4px solid blueviolet;
+                padding: 12px;
+            }
+            .card {
+                background-color: peachpuff;
+                border: 4px solid salmon;
+                height: auto;
+                flex: 1;
+                margin: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .card img {
+                width: 100px;
+                height: 100px;
+            }
+            .card:hover {
+                transform: translateY(-6px);
+                box-shadow: 10px 10px 5px rgba(50, 91, 186, 0.5);
+            }
+            .grid-container {
+                display: grid;
+                grid-template-columns: 200px 1fr;
+                grid-template-rows: 150px 150px 150px;
+                margin: 4px;
+            }
+            .grid-item {
+                background-color: sandybrown;
+                border: 1px solid black;
+                padding: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            .grid-container header {
+                grid-column: 1 / -1;
+                grid-row: 1;
+            }
+            .grid-container aside {
+                grid-area: 2 / 1;
+            }
+            .grid-container main {
+                grid-area: 2 / 2;
+            }
+            .grid-container footer {
+                grid-column: 1 / -1;
+                grid-row: 3;
+            }
+            .gallery-container {
+                display: grid;
+                background-color: lightsteelblue;
+                grid-template-columns: 200px 200px 200px;
+                grid-template-rows: 200px 200px 200px;
+                gap: 32px;
+                justify-content: center;
+                padding: 12px;
+            }
+            .gallery-item {
+                background-color:khaki;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                width: 100%;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color:palegoldenrod;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .gallery-item:hover .overlay {
+                opacity: 1;
+            }
+            .page {
+                display: grid;
+                grid-template-rows: auto 1fr auto;
+                gap: 12px;
+            }
+            .page-header {
+                display: flex;
+                background-color: darkkhaki;
+                justify-content: center;
+                align-items: center;
+                padding: 12px;
+            }
+            .content {
+                display: grid;
+                grid-template-columns: 1fr 250px;
+                gap: 12px;
+            }
+            .projects {
+                display: grid;
+                gap: 12px;
+                grid-template-columns: 1fr 1fr;
+            }
+            .project-card {
+                background-color:bisque;
+                display: flex;
+                align-items: flex-start;
+                padding: 12px;
+                gap: 8px;
+                flex-direction: column;
+            }
+            .sidebar {
+                background-color:lemonchiffon;
+                padding: 12px;
+            }
+            .footer {
+                background-color: darkkhaki;
+                padding: 12px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="nav-bar">
+            <a href="#"><img src="monkey-icon.png" width="100" height="100" alt="MonkeyLogo"></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="card-row">
+            <div class="card"><img src="dog-icon.png"><h1>Dog</h1><p>This is an image of a dog</p><button>Pet</button></div>
+            <div class="card"><img src="cat-icon.png"><h1>Cat</h1><p>This is an image of a cat</p><button>Pet</button></div>
+            <div class="card"><img src="rabbit-icon.png"><h1>Rabbit</h1><p>This is an image of a rabbit</p><button>Pet</button></div>
+        </div>
+        <div class="grid-container">
+            <header class="grid-item">Header</header>
+            <aside class="grid-item">Sidebar</aside>
+            <main class="grid-item">Main content</main>
+            <footer class="grid-item">Footer</footer>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="apple-icon.png"><div class="overlay"><p>APPLE</p></div></div>
+            <div class="gallery-item"><img src="pear-icon.png"><div class="overlay"><p>PEAR</p></div></div>
+            <div class="gallery-item"><img src="banana-icon.png"><div class="overlay"><p>BANANA</p></div></div>
+            <div class="gallery-item"><img src="cherry-icon.png"><div class="overlay"><p>CHERRY</p></div></div>
+            <div class="gallery-item"><img src="orange-icon.png"><div class="overlay"><p>ORANGE</p></div></div>
+            <div class="gallery-item"><img src="grape-icon.png"><div class="overlay"><p>GRAPE</p></div></div>
+            <div class="gallery-item"><img src="strawberry-icon.png"><div class="overlay"><p>STRAWBERRY</p></div></div>
+            <div class="gallery-item"><img src="watermelon-icon.png"><div class="overlay"><p>WATERMELON</p></div></div>
+            <div class="gallery-item"><img src="corn-icon.png"><div class="overlay"><p>CORN</p></div></div>
+        </div>
+        <div class="page">
+            <header class="page-header"><h3>My Portfolio</h3></header>
+            <div class="content">
+                <div class="projects">
+                    <div class="project-card">
+                        <h3>Weather app</h3>
+                        <p>A simple weather dashboard</p>
+                        <button>View</button>
+                    </div>
+                    <div class="project-card">
+                        <h3>Recipe finder</h3>
+                        <p>Search recipes by ingredient and save favorites</p>
+                        <button>View</button>
+                    </div>
+                    <div class="project-card">
+                        <h3>Movie finder</h3>
+                        <p>Search movies by genre and keywords</p>
+                        <button>View</button>
+                    </div>
+                    <div class="project-card">
+                        <h3>Notes app</h3>
+                        <p>Type, save, and list short text notes</p>
+                        <button>View</button>
+                    </div>
+                </div>
+                <aside class="sidebar">
+                    <h2>About Me</h2>
+                    <p>Second-year Software Engineering student at AITU</p>
+                </aside>
+            </div>
+            <footer class="footer"><h3>My Portfolio</h3></footer>
+        </div>
+    </body>
+</html>
